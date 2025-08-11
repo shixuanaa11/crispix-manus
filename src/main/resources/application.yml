@@ -1,0 +1,30 @@
+
+server:
+  port: 8123
+  servlet:
+    context-path: /api
+
+# knife4j
+knife4j:
+  enable: true
+  setting:
+    language: zh_cn
+# 模型配置，openapi范式，以下链接是火山引擎的模型，需要到火山开通和获取key
+spring:
+  ai:
+    openai:
+      base-url: https://ark.cn-beijing.volces.com/api/v3
+      chat:
+        options:
+          model: deepseek-v3-250324
+        completions-path: /chat/completions
+      api-key: "{{VOLCENGINE_APIKEY}}"
+
+# 联网搜索图片工具 searchApi
+search-api:
+  api-key: "{{SEARCHAPI_APIKEY}"
+
+# replicate key
+replicate-api:
+  token: "{{REPLICATE_TOKEN}}"
+
